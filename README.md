@@ -13,3 +13,16 @@
  Currently you need to change the Wifi SSID and password in the '/src/main.cpp' file before building and flashing. I plan to add a captive Wifi portal so this isn't needed.
  
  ## MQTT Broker and websockets
+
+For this project to work, your MQTT broker needs to support websockets and have the port enabled. I use openhabian to run openHAB and the built in mosquitto broker. You need to edit the broker config. to allow websocket connections. From an SSH connection to openhabian run 'sudo nano /etc/mosquitto/mosquitto.conf' 
+
+Add the following to allow websockets on the port you require. I believe you need to define the tcp port here as well even though its already been working.
+```
+# this will listen for mqtt on tcp
+listener 1883
+# this will expect websockets connections e.g. 9000
+listener 9000
+protocol websockets
+```
+
+Save then restart mosquitto using `sudo /etc/init.d/mosquitto restart`. 
