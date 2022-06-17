@@ -42,8 +42,12 @@ void setup(){
     request->send(LittleFS, "/css/style.css", "text/css");
   });
   
+    server.on("/favicon.ico", HTTP_GET, [](AsyncWebServerRequest *request){
+    request->send(LittleFS, "/favicon.ico", "image/x-icon");
+  });
+  
   //  Route to load css/jquery.minicolors.css file
-  server.on("/css/jquery.minicolor.css", HTTP_GET, [](AsyncWebServerRequest *request){
+  server.on("/css/jquery.minicolors.css", HTTP_GET, [](AsyncWebServerRequest *request){
     request->send(LittleFS, "/css/jquery.minicolors.css", "text/css");
   });
   
@@ -78,27 +82,27 @@ void setup(){
     request->send(LittleFS, "/js/mqttws31.js", "text/javascript");
   });
 
-  server.on("/assets/arrow_down", HTTP_GET, [](AsyncWebServerRequest *request){
+  server.on("/assets/arrow_down.png", HTTP_GET, [](AsyncWebServerRequest *request){
     request->send(LittleFS, "/assets/arrow_down.png", "image/png");
   });
 
-server.on("/assets/arrow_up", HTTP_GET, [](AsyncWebServerRequest *request){
+server.on("/assets/arrow_up.png", HTTP_GET, [](AsyncWebServerRequest *request){
     request->send(LittleFS, "/assets/arrow_up.png", "image/png");
   });
 
-  server.on("/assets/chevron-double-3-01", HTTP_GET, [](AsyncWebServerRequest *request){
+  server.on("/assets/chevron-double-3-01.png", HTTP_GET, [](AsyncWebServerRequest *request){
     request->send(LittleFS, "/assets/chevron-double-3-01.png", "image/png");
   });
 
-  server.on("/assets/chevron-double-3-02", HTTP_GET, [](AsyncWebServerRequest *request){
+  server.on("/assets/chevron-double-3-02.png", HTTP_GET, [](AsyncWebServerRequest *request){
     request->send(LittleFS, "/assets/chevron-double-3-02.png", "image/png");
   });
 
-  server.on("/logo", HTTP_GET, [](AsyncWebServerRequest *request){
+  server.on("/assets/logo.png", HTTP_GET, [](AsyncWebServerRequest *request){
     request->send(LittleFS, "/assets/logo.png", "image/png");
   });
 
-  server.on("/header-logo", HTTP_GET, [](AsyncWebServerRequest *request){
+  server.on("/assets/hivemq-logo.svg", HTTP_GET, [](AsyncWebServerRequest *request){
     request->send(LittleFS, "/assets/hivemq-logo.svg", "image/svg+xml");
   });
 
