@@ -1,6 +1,6 @@
 ﻿## Wemos-MQTT-websocket-PubSub-client
  
- This project came about while looking for a quick way of seeing the status of various espurna flashed IOT devices. All of my devices use the MQTT protocol to communicate with openHAB.
+ This project came about while looking for a quick way of seeing the status of various espurna flashed IOT devices. All of my devices use the MQTT protocol to communicate with openHAB. The project is my first attempt at bringing code like this together so there maybe a chance things will stop working. Feel free to offer any Pull requests or raise issues, but I can't promise to be able to implement ideas or fix things quickly. :)
  
  Using the option of MQTT over websockets, I found a web based MQTT client made by HiveMQ that will run in a single web page. I wondered if it was possible to run the page in a web server hosted on an ESP8266 WEMOS D1 MINI board.
  
