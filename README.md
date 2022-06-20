@@ -31,4 +31,5 @@ Save then restart mosquitto using `sudo /etc/init.d/mosquitto restart`.
 
 - With a devices {root} e.g. `Device001`, to view all messages for that topic, subscribe to `Device001/#`.<br>
 - To force a heartbeat update for that device, publish to the topic `Device001/action/set` with a message of `heartbeat`.<br>
-- To toggle the relay #0 for that device, publish to the topic `Device001/relay/0/set` with a message of `2`<br>
+- To toggle the relay #0 for that device, publish to the topic `Device001/relay/0/set` with a message of `2`.<br>
+- For other espurna MQTT examples, see the [MQTT Wiki](https://github.com/xoseperez/espurna/wiki/MQTT).
