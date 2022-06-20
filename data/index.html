@@ -254,6 +254,33 @@
                                     </div>
                                 </div>
                             </form>
+                            
+                            <form class="custom">
+                                <div class="row large-12 columns">
+                                    <div class="large-4 columns">
+                                        <label>Color</label>
+                                        <input class="color" id="colorChooser" type="hidden">
+                                    </div>
+                                    <div class="large-5 columns">
+                                        <label for="QoSInput">QoS</label>
+                                        <select id="QoSInput" class="small">
+                                            <option>2</option>
+                                            <option>1</option>
+                                            <option>0</option>
+                                        </select>
+                                    </div>
+                                    <div class="large-3 columns">
+                                        <a class="small button" id="subscribeButton"
+                                           onclick="if(websocketclient.subscribe($('#subscribeTopic').val(),parseInt($('#QoSInput').val()),$('#colorChooser').val().substring(1))){$.fancybox.close();}">Subscribe</a>
+                                    </div>
+                                </div>
+                                <div class="row large-12 columns">
+                                    <div class="large-12 columns">
+                                        <label>Topic</label>
+                                        <input id="subscribeTopic" type="text" value="+/ip">
+                                    </div>
+                                </div>
+                            </form>                        
                         </div>
                     </div>
 
