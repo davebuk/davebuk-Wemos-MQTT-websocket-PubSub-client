@@ -1,12 +1,12 @@
 ﻿# Wemos-MQTT-websocket-PubSub-client
  
- This project came about while looking for a quick way of seeing the status of various espurna flashed IOT devices. All of my devices use the MQTT protocol to communicate with openHAB. The project is my first attempt at bringing code like this together so there maybe a chance things will stop working. Feel free to offer any Pull requests or raise issues, but I can't promise to be able to implement ideas or fix things quickly. :)
+This project came about while looking for a quick way of seeing the status of various [espurna](https://github.com/xoseperez/espurna) flashed IOT devices. All of my devices use the MQTT protocol to communicate with openHAB. The project is my first attempt at bringing code like this together so there maybe a chance things will stop working. Feel free to offer any Pull requests or raise issues, but I can't promise to be able to implement ideas or fix things quickly. :)
  
- Using the option of MQTT over websockets, I found a web based MQTT client made by HiveMQ that will run in a single web page. I wondered if it was possible to run the page in a web server hosted on an ESP8266 WEMOS D1 MINI board.
+Using the option of MQTT over websockets, I found a web based MQTT client made by [HiveMQ](https://github.com/hivemq/hivemq-mqtt-web-client) that will run in a single web page. I wondered if it was possible to run the page in a web server hosted on an ESP8266 WEMOS D1 MINI board.
  
- After some testing I was able to get the web server running using ESPAsyncWebServer and LittleFS to hold the web page and java script files.
+After some testing I was able to get the web server running using ESPAsyncWebServer and LittleFS to hold the web page and java script files.
  
- The code can be built using platformIO, flashed to a WEMOS D1 MINI and the file system held in the `/data` directory uploaded.
+The code can be built using platformIO, flashed to a WEMOS D1 MINI and the file system held in the `/data` directory uploaded from platformio using the `Upload Filesystem Image`option.
  
  ## Wifi connection
  
@@ -29,6 +29,6 @@ Save then restart mosquitto using `sudo /etc/init.d/mosquitto restart`.
 
 ## MQTT Examples based on espurna MQTT messages
 
-With a devices {root} e.g. `Device001`, to view all messages for that topic, subscribe to `Device001/#`.
-To force a heartbeat update for that device, publish to the topic `Device001/action/set` with a message of `heartbeat`.
-To toggle the relay #0 for that device, publish to the topic `Device001/relay/0/set` with a message of `2`
+- With a devices {root} e.g. `Device001`, to view all messages for that topic, subscribe to `Device001/#`.<br>
+- To force a heartbeat update for that device, publish to the topic `Device001/action/set` with a message of `heartbeat`.<br>
+- To toggle the relay #0 for that device, publish to the topic `Device001/relay/0/set` with a message of `2`<br>
