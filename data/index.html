@@ -43,12 +43,12 @@
                 <form class="custom">
                     <div class="large-5 columns">
                         <label>Host</label>
-                        <input id="urlInput" type="text" value="192.168.1.222">
+                        <input id="urlInput" type="text" value="broker.mqttdashboard.com">
                     </div>
 
                     <div class="large-1 columns">
                         <label>Port</label>
-                        <input id="portInput" type="text" value="1885"/>
+                        <input id="portInput" type="text" value="8000"/>
                     </div>
 
                     <div class="large-4 columns">
@@ -139,8 +139,8 @@
                     <form class="custom">
                         <div class="row">
                             <div class="large-6 columns">
-                                <label>Topic</label>
-                                <input id="publishTopic" type="text" value="testtopic/1">
+                                <label>Topic - Publish any changes to your topics</label>
+                                <input id="publishTopic" type="text" value="{root}/action/set">
                             </div>
                             <div class="large-2 columns">
                                 <label for="publishQoSInput">QoS</label>
@@ -160,7 +160,7 @@
                         </div>
                         <div class="row">
                             <div class="large-12 columns">
-                                <label>Message</label>
+                                <label>Message - Payload e.g. 'heartbeat' or '0'</label>
                                 <textarea id="publishPayload"></textarea>
                             </div>
                         </div>
@@ -250,20 +250,21 @@
                                 <div class="row large-12 columns">
                                     <div class="large-12 columns">
                                         <label>Topic</label>
-                                        <input id="subscribeTopic" type="text" value="testtopic/#">
+                                        <!input id="subscribeTopic" type="text" value="testtopic/#">
+										<select id="subscribeTopic">
+                                            <option>+/ip</option>
+                                            <option>+/status</option>
+                                            <option>+/host</option>
+                                        </select>										
                                     </div>
                                 </div>
-                            </form>
-                            
-                            <form class="custom">
+                            </form>							
+
+							<form class="custom">
                                 <div class="row large-12 columns">
-                                    <div class="large-4 columns">
-                                        <label>Color</label>
-                                        <input class="color" id="colorChooser" type="hidden">
-                                    </div>
                                     <div class="large-5 columns">
                                         <label for="QoSInput">QoS</label>
-                                        <select id="QoSInput" class="small">
+                                        <select id="QoSInput01" class="small">
                                             <option>2</option>
                                             <option>1</option>
                                             <option>0</option>
@@ -271,16 +272,17 @@
                                     </div>
                                     <div class="large-3 columns">
                                         <a class="small button" id="subscribeButton"
-                                           onclick="if(websocketclient.subscribe($('#subscribeTopic').val(),parseInt($('#QoSInput').val()),$('#colorChooser').val().substring(1))){$.fancybox.close();}">Subscribe</a>
+                                           onclick="if(websocketclient.subscribe($('#subscribeTopic01').val(),parseInt($('#QoSInput01').val()),$('#colorChooser').val().substring(1))){$.fancybox.close();}">Subscribe</a>
                                     </div>
                                 </div>
                                 <div class="row large-12 columns">
                                     <div class="large-12 columns">
-                                        <label>Topic</label>
-                                        <input id="subscribeTopic" type="text" value="+/ip">
+                                        <label>Topic - Put your own topic here</label>
+                                        <input id="subscribeTopic01" type="text" value="">
+                                        </select>										
                                     </div>
                                 </div>
-                            </form>                        
+                            </form>
                         </div>
                     </div>
 
