@@ -26,3 +26,9 @@ protocol websockets
 ```
 
 Save then restart mosquitto using `sudo /etc/init.d/mosquitto restart`. 
+
+## MQTT Examples based on espurna MQTT messages
+
+With a devices {root} e.g. `Device001`, to view all messages for that topic, subscribe to `Device001/#`.
+To force a heartbeat update for that device, publish to the topic `Device001/action/set` with a message of `heartbeat`.
+To toggle the relay #0 for that device, publish to the topic `Device001/relay/0/set` with a message of `2`
