@@ -1,8 +1,9 @@
-# NOTE: The index.html file has been modified to add some pre-defined Subscritions for use with [espurna](https://github.com/xoseperez/espurna). ESPurna doesn't have a direct association with HiveHQ and its code. For my project that uses this code, I have removed some image files to keep the complete file structure small. 
+## NOTE: The index.html file has been modified to add some pre-defined Subscriptions for use with [espurna](https://github.com/xoseperez/espurna). ESPurna doesn't have a direct association with HiveHQ and its code. For my project that uses this code, I have removed some image files to keep the complete file structure small. 
 
 
 hivemq-mqtt-web-client
 ======================
+
 
 ## A websockets based MQTT Client for your browser.
 
