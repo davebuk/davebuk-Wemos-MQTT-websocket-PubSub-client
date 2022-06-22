@@ -37,7 +37,6 @@ void setup(){
     request->send(LittleFS, "/index.html", "text/html");
   });
   
- //  Route to load css/style.css file
   server.on("/css/style.css", HTTP_GET, [](AsyncWebServerRequest *request){
     request->send(LittleFS, "/css/style.css", "text/css");
   });
@@ -46,17 +45,14 @@ void setup(){
     request->send(LittleFS, "/favicon.ico", "image/x-icon");
   });
   
-  //  Route to load css/jquery.minicolors.css file
   server.on("/css/jquery.minicolors.css", HTTP_GET, [](AsyncWebServerRequest *request){
     request->send(LittleFS, "/css/jquery.minicolors.css", "text/css");
   });
   
-  //  Route to load css/normalize.css file
   server.on("/css/normalize.css", HTTP_GET, [](AsyncWebServerRequest *request){
     request->send(LittleFS, "/css/normalize.css", "text/css");
   });
   
-  //  Route to load css/foundation.css file
   server.on("/css/foundation.css", HTTP_GET, [](AsyncWebServerRequest *request){
     request->send(LittleFS, "/css/foundation.css", "text/css");
   });
@@ -65,28 +61,45 @@ void setup(){
     request->send(LittleFS, "/config.js", "text/javascript");
   });
 
-
   server.on("/js/app.js", HTTP_GET, [](AsyncWebServerRequest *request){
     request->send(LittleFS, "/js/app.js", "text/javascript");
   });
   server.on("/js/custom-combobox.js", HTTP_GET, [](AsyncWebServerRequest *request){
     request->send(LittleFS, "/js/custom-combobox.js", "text/javascript");
   });
-  server.on("/js/encoder.js", HTTP_GET, [](AsyncWebServerRequest *request){
+  
+ server.on("/js/encoder.js", HTTP_GET, [](AsyncWebServerRequest *request){
     request->send(LittleFS, "/js/encoder.js", "text/javascript");
   });
-  server.on("/js/jquery.minicolors.min.js", HTTP_GET, [](AsyncWebServerRequest *request){
+  
+ server.on("/js/jquery.minicolors.min.js", HTTP_GET, [](AsyncWebServerRequest *request){
     request->send(LittleFS, "/js/jquery.minicolors.min.js", "text/javascript");
   });
   server.on("/js/mqttws31.js", HTTP_GET, [](AsyncWebServerRequest *request){
     request->send(LittleFS, "/js/mqttws31.js", "text/javascript");
+  });
+ 
+  server.on("/js/arrow.gif", HTTP_GET, [](AsyncWebServerRequest *request){
+    request->send(LittleFS, "/js/arrow.gif", "image/gif");
+  });
+ 
+    server.on("/js/cross.gif", HTTP_GET, [](AsyncWebServerRequest *request){
+    request->send(LittleFS, "/js/cross.gif", "image/gif");
+  });
+ 
+  server.on("/js/hs.png", HTTP_GET, [](AsyncWebServerRequest *request){
+    request->send(LittleFS, "/js/hs.png", "image/png");
+  });
+
+  server.on("/js/hv.png", HTTP_GET, [](AsyncWebServerRequest *request){
+    request->send(LittleFS, "/js/hv.png", "image/png");
   });
 
   server.on("/assets/arrow_down.png", HTTP_GET, [](AsyncWebServerRequest *request){
     request->send(LittleFS, "/assets/arrow_down.png", "image/png");
   });
 
-server.on("/assets/arrow_up.png", HTTP_GET, [](AsyncWebServerRequest *request){
+ server.on("/assets/arrow_up.png", HTTP_GET, [](AsyncWebServerRequest *request){
     request->send(LittleFS, "/assets/arrow_up.png", "image/png");
   });
 
