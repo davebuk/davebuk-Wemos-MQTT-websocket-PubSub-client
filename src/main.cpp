@@ -111,8 +111,12 @@ void setup(){
     request->send(LittleFS, "/assets/chevron-double-3-02.png", "image/png");
   });
 
-  server.on("/assets/logo.png", HTTP_GET, [](AsyncWebServerRequest *request){
-    request->send(LittleFS, "/assets/logo.png", "image/png");
+  server.on("/assets/chevron-double-3-02.png", HTTP_GET, [](AsyncWebServerRequest *request){
+    request->send(LittleFS, "/assets/chevron-double-3-02.png", "image/png");
+  });
+
+  server.on("/assets/jquery.minicolors.png", HTTP_GET, [](AsyncWebServerRequest *request){
+    request->send(LittleFS, "/assets/jquery.minicolors.png", "image/png");
   });
 
   server.on("/assets/hivemq-logo.svg", HTTP_GET, [](AsyncWebServerRequest *request){
