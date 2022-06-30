@@ -10,7 +10,7 @@ The code can be built using platformIO, flashed to a WEMOS D1 MINI and the file 
  
  ## Wifi connection
  
- Currently you need to change the Wifi SSID and password in the '/src/main.cpp' file before building and flashing. I plan to add a captive Wifi portal so this isn't needed.
+A WiFi captive portal is used to setup the connection. On a fresh boot or if the device can't connect the the WiFi, the ESP will create an access point (AP). Connect to this, add SSID, SSID password and fixed IP address (normally one out of your routers DHCP range). The device will re-boot, connect to your router then the Hive MQTT client will be available at the IP you set.
  
  ## MQTT Broker and websockets
 
