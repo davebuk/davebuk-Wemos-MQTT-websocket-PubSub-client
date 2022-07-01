@@ -8,9 +8,9 @@ After some testing I was able to get the web server running using ESPAsyncWebSer
  
 The code can be built using platformIO, flashed to a WEMOS D1 MINI and the file system held in the `/data` directory uploaded from platformio using the `Upload Filesystem Image`option.
  
- ## Wifi connection
+ ## Wifi connection - Fixed IP address ONLY
  
-A WiFi captive portal is used to setup the connection. On a fresh boot or if the device can't connect the the WiFi, the ESP will create an access point (AP). Connect to this, add SSID, SSID password and fixed IP address (normally one out of your routers DHCP range). The device will re-boot, connect to your router then the Hive MQTT client will be available at the IP you set.
+A WiFi captive portal is used to setup the connection. On a fresh boot or if the device can't connect the the WiFi, the ESP will create an access point (AP). Connect to this, open page: 192.168.4.1 in your web browser and add SSID, SSID password and fixed IP address (normally one out of your routers DHCP range). The device will re-boot, connect to your router then the Hive MQTT client will be available at the IP you set.
  
  ## MQTT Broker and websockets
 
@@ -29,7 +29,7 @@ Save then restart mosquitto using `sudo /etc/init.d/mosquitto restart`.
 
 ## MQTT Examples based on espurna MQTT messages
 
-- With a devices {root} e.g. `Device001`, to view all messages for that topic, subscribe to `Device001/#`.<br>
-- To force a heartbeat update for that device, publish to the topic `Device001/action/set` with a message of `heartbeat`.<br>
-- To toggle the relay #0 for that device, publish to the topic `Device001/relay/0/set` with a message of `2`.<br>
+- With a devices {root} e.g. `Device001`, to view all messages for that topic, **subscribe** to `Device001/#`.<br>
+- To force a heartbeat update for that device, **publish** to the topic `Device001/action/set` with a message of `heartbeat`.<br>
+- To toggle the relay #0 for that device, **publish** to the topic `Device001/relay/0/set` with a message of `2`.<br>
 - For other espurna MQTT examples, see the [MQTT Wiki](https://github.com/xoseperez/espurna/wiki/MQTT).
